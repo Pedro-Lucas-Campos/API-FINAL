@@ -19,7 +19,7 @@ def registrar_dado(dado: Record):
     fuso_horario = ZoneInfo("America/Sao_Paulo")
     dado_dict = dado.model_dump()
     timestamplocal = datetime.datetime.now(fuso_horario)
-    dado_dict["timestamp"] = datetime.datetime.now().isoformat()
+    dado_dict["timestamp"] = timestamplocal.isoformat()
     database.append(dado_dict)
     return {"mensagem": "Dado recebido com sucesso", "dados": dado_dict}
 
