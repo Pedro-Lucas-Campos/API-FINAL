@@ -11,6 +11,7 @@ database = []
 class Record(BaseModel):
     VIN: str
     Localização: str
+    Tipo : str
 
 @app.post("/add_record", status_code=201)
 def registrar_dado(dado: Record):
